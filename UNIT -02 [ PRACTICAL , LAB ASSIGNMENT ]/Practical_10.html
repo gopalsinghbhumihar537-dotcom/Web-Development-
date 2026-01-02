@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Short Layout</title>
+<style>
+  body {
+    margin: 0; font-family: sans-serif;
+    background: #f3f4f6; color: #111;
+    display: flex; justify-content: center; align-items: center;
+    min-height: 100vh;
+  }
+  .page {
+    width: 90%; max-width: 900px;
+    background: #fff; border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.1);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(90deg,#6366f1,#3b82f6);
+    color: #fff; padding: 16px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .btn {
+    background: rgba(255,255,255,.2);
+    padding: 6px 12px; border-radius: 8px;
+    color: #fff; text-decoration: none;
+  }
+  .main { display: grid; grid-template-columns: 200px 1fr; gap: 16px; padding: 20px; }
+  .sidebar { background: #f9fafb; padding: 16px; border-radius: 10px; }
+  .item { margin-bottom: 8px; cursor: pointer; padding: 8px; border-radius: 8px; }
+  .item:hover { background: #e0e7ff; color: #1e3a8a; }
+  .content { background: #fff; padding: 16px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,.05); }
+  .badge { background: #fde68a; color: #78350f; padding: 2px 8px; border-radius: 12px; font-size: .8rem; }
+  .footer { text-align: center; padding: 10px; color: #6b7280; background: #f9fafb; }
+  @media (max-width:700px){ .main{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div>MyDashboard <span class="badge">v2.0</span></div>
+    <div><a href="#" class="btn">+ New</a></div>
+  </div>
+
+  <div class="main">
+    <div class="sidebar">
+      <div class="item">🏠 Home</div>
+      <div class="item">📊 Reports</div>
+      <div class="item">⚙ Settings</div>
+    </div>
+
+    <div class="content">
+      <h2>Hello <span class="badge">User</span> </h2>
+      <p>Welcome to your dashboard using only <code>div</code> & <code>span</code>!</p>
+    </div>
+  </div>
+
+  <div class="footer">© 2025 MyDashboard</div>
+</div>
+</body>
+</html>
+
+

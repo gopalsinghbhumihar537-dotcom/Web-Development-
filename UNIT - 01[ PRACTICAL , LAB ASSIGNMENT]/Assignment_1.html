@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HTML Attributes Example</title>
+</head>
+<body>
+    <h1>Demonstrating HTML Attributes</h1>
+
+    <!-- Example 1: Anchor tag with multiple attributes -->
+    <p>Visit OpenAI's website:</p>
+    <a href="https://www.openai.com" target="_blank" title="Click to visit OpenAI" rel="noopener noreferrer">
+        OpenAI
+    </a>
+    <!-- Explanation:
+         href = link destination
+         target = opens link in a new tab
+         title = tooltip text
+         rel = improves security when using target="_blank"
+    -->
+
+    <hr>
+
+    <!-- Example 2: Image tag with multiple attributes -->
+    <p>Company Logo:</p>
+    <img src="https://logos-marcas.com/wp-content/uploads/2021/03/Honda-Logo.png" alt="Company Logo" width="250" height="150" title="Our Company Logo" loading="lazy">
+    <!-- Explanation:
+         src = image source path
+         alt = alternative text if image fails to load
+         width & height = image display size
+         title = tooltip text on hover
+         loading = lazy loads the image to improve performance
+    -->
+
+    <hr>
+
+    <!-- Example 3: Paragraph with class and id attributes -->
+    <p id="intro" class="highlighted-text" title="Introduction paragraph">
+        This paragraph demonstrates the use of <strong>id</strong> and <strong>class</strong> attributes.
+    </p>
+    <!-- Explanation:
+         id = unique identifier, useful for CSS or JavaScript
+         class = groups elements for styling
+         title = tooltip when hovered
+    -->
+
+    <hr>
+
+    <!-- Example 4: Button with attributes -->
+    <button type="button" onclick="alert('Button clicked!')" title="Click me!">
+        Click Me
+    </button>
+    <!-- Explanation:
+         type = defines button type
+         onclick = executes JavaScript when clicked
+         title = tooltip text
+    -->
+
+    <hr>
+
+    <!-- Example 5: Input field with attributes -->
+    <form action="/submit" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <!-- Explanation:
+         type = specifies input type
+         id = unique identifier
+         name = name for form submission
+         placeholder = text shown inside input field
+         required = ensures field must be filled before submission
+    -->
+
+</body>
+</html>

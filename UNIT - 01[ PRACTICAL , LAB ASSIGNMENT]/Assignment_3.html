@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html >
+<head>
+    
+    <title>HTML &lt;img&gt; Tag Example</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f9fafc;
+            color: #333;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #004aad;
+        }
+
+        .image-container {
+            display: inline-block;
+            border: 3px solid #004aad;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-container img {
+            width: 400px;
+            height: 250px;
+            display: block;
+        }
+
+        .caption {
+            background-color: #004aad;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        p {
+            max-width: 700px;
+            margin: 20px auto;
+            line-height: 1.6;
+        }
+
+        code {
+            background: #eee;
+            padding: 2px 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Beautiful Example of the &lt;img&gt; Tag</h1>
+    <p>
+        The <code>&lt;img&gt;</code> tag in HTML is used to insert an image into a web page.
+        It uses attributes like <code>src</code> (source of the image) and <code>alt</code> (alternative text)
+        to display and describe the image.
+    </p>
+
+    <div class="image-container">
+        <img src="https://www.w3schools.com/html/img_chania.jpg" 
+             alt="Scenic view of Chania town in Greece" 
+             title="Scenic View of Chania, Greece">
+        <div class="caption">Scenic View of Chania, Greece</div>
+    </div>
+
+    <p>
+        <b>Explanation:</b><br>
+        - <b>src</b>: Defines where the image is located.<br>
+        - <b>alt</b>: Displays text if the image can’t load and helps with accessibility.<br>
+        - <b>title</b>: Shows a tooltip when hovering over the image.<br>
+        - <b>width/height</b> (optional): Control the image’s display size.
+    </p>
+
+</body>
+</html>

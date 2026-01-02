@@ -1,0 +1,22 @@
+/* External CSS */
+h2 {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.footer-text {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #3d5aeb;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
+    transition: background 0.3s;
+}
+
+.footer-text:hover {
+    background-color: #3342e6;
+}

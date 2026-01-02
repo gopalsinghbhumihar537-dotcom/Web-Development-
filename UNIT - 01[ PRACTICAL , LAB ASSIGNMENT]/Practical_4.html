@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Student Information Form</title>
+</head>
+<body>
+
+    <h1 align="center">Student Information Form</h1>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Student Information</legend>
+
+            <!-- Personal Information -->
+            <label for="name">Full Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required><br><br>
+
+            <label for="father">Father's Name:</label><br>
+            <input type="text" id="father" name="father" placeholder="Enter your father's name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+
+            <label for="mobile">Mobile Number:</label><br>
+            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number" required><br><br>
+
+            <label for="dob">Date of Birth:</label><br>
+            <input type="date" id="dob" name="dob" required><br><br>
+
+            <label for="address">Address:</label><br>
+            <textarea id="address" name="address" rows="3" cols="40" placeholder="Enter your address" required></textarea><br><br>
+
+            <!-- Gender -->
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label><br>
+
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label><br>
+
+            <input type="radio" id="other" name="gender" value="Other">
+            <label for="other">Other</label><br><br>
+
+            <!-- Skills -->
+            <label>Skills:</label><br>
+            <input type="checkbox" id="c" name="skills[]" value="C">
+            <label for="c">C</label><br>
+
+            <input type="checkbox" id="html" name="skills[]" value="HTML">
+            <label for="html">HTML</label><br>
+
+            <input type="checkbox" id="java" name="skills[]" value="Java">
+            <label for="java">Java</label><br>
+
+            <input type="checkbox" id="cpp" name="skills[]" value="C++">
+            <label for="cpp">C++</label><br><br>
+
+            <!-- Hobbies -->
+            <label>Hobbies:</label><br>
+            <input type="checkbox" id="reading" name="hobbies[]" value="Reading">
+            <label for="reading">Reading</label><br>
+
+            <input type="checkbox" id="sports" name="hobbies[]" value="Sports">
+            <label for="sports">Sports</label><br>
+
+            <input type="checkbox" id="music" name="hobbies[]" value="Music">
+            <label for="music">Music</label><br>
+
+            <input type="checkbox" id="travel" name="hobbies[]" value="Travel">
+            <label for="travel">Travel</label><br><br>
+
+            <!-- Education -->
+            <label for="branch">Choose Branch:</label><br>
+            <select id="branch" name="branch" required>
+                <option value="">Select Branch</option>
+                <option value="CSE">CSE</option>
+                <option value="Cyber">Cyber</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="IT">IT</option>
+                <option value="ECE">ECE</option>
+            </select><br><br>
+
+            <label for="year">Select Year:</label><br>
+            <select id="year" name="year" required>
+                <option value="">Select Year</option>
+                <option value="1st">1st Year</option>
+                <option value="2nd">2nd Year</option>
+                <option value="3rd">3rd Year</option>
+                <option value="4th">4th Year</option>
+            </select><br><br>
+
+            <!-- File Upload -->
+            <label for="photo">Upload Photo:</label><br>
+            <input type="file" id="photo" name="photo" accept="image/*"><br><br>
+
+            <!-- Submit & Reset Buttons -->
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+
+        </fieldset>
+    </form>
+
+</body>
+</html>
+
+
+<p><strong>Text Inputs:</strong> Collect short text like Name, Email, Mobile, or Address. Specialized types like <code>email</code>, <code>tel</code>, and <code>date</code> help with validation.</p>
+<p><strong>Radio Buttons:</strong> Allow the user to select <em>only one option</em> from a set. Example: Gender.</p> 
+<p><strong>Checkboxes:</strong> Allow the user to select <em>multiple options</em>. Example: Skills or Hobbies.</p>
+<p><strong>Select Menus:</strong> Provide a dropdown list for choosing one option. Example: Branch or Year.</p>
+<p><strong>Submit Button:</strong> Sends the form data to the server.</p> 
+<p><strong>Reset Button:</strong> Clears all input fields and restores default values.</p>
+</body>
+</html>
+
+
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(to right, #89f7fe, #66a6ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      width: 320px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .success {
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Register</h2>
+
+  <form onsubmit="return validateForm()">
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="text" id="email" placeholder="Enter Email">
+    <input type="password" id="password" placeholder="Enter Password">
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Message will show here -->
+  <div id="successMsg" class="success">
+    Thank you for submitting your form
+  </div>
+</div>
+
+<script>
+  function validateForm() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let msg = document.getElementById("successMsg");
+
+    // Hide message every time submit is clicked
+    msg.style.display = "none";
+
+    if (name === "") {
+      alert("Name cannot be empty");
+      return false;
+    }
+
+    if (name.length < 3) {
+      alert("Name must be at least 3 characters");
+      return false;
+    }
+
+    if (!email.includes("@")) {
+      alert("Please enter a valid email");
+      return false;
+    }
+
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters");
+      return false;
+    }
+
+    // Show message below form
+    msg.style.display = "block";
+
+    return false; // stop actual submission (for demo)
+  }
+</script>
+
+</body>
+</html>

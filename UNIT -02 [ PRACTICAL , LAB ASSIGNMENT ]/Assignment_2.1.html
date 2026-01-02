@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Profile Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Element Selector ===== */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* ===== ID Selector ===== */
+    #card-container {
+      position: relative; /* relative positioning */
+      width: 320px;
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      overflow: hidden;
+      transition: transform 0.4s ease;
+    }
+
+    /* ===== Pseudo-class ===== */
+    #card-container:hover {
+      transform: translateY(-10px) scale(1.03);
+    }
+
+    /* ===== Class Selector ===== */
+    .header {
+      height: 110px;
+      background: linear-gradient(120deg, #43cea2, #185a9d);
+    }
+
+    .profile-pic {
+      position: absolute; /* absolute positioning */
+      top: 55px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 5px solid #ffffff;
+      background: url('https://via.placeholder.com/150') center/cover no-repeat;
+    }
+
+    .content {
+      padding: 70px 20px 25px;
+      text-align: center;
+    }
+
+    .name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .role {
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    .bio {
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block; /* display type */
+      padding: 10px 20px;
+      border-radius: 25px;
+      background-color: #667eea;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    /* ===== Pseudo-classes ===== */
+    .btn:hover {
+      background-color: #764ba2;
+      transform: scale(1.05);
+    }
+
+    .btn:active {
+      transform: scale(0.95);
+    }
+
+    .btn:focus {
+      outline: 2px solid #43cea2;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="card-container">
+    <div class="header"></div>
+    <div class="profile-pic"></div>
+
+    <div class="content">
+      <div class="name">Gopal</div>
+      <div class="role">Web Developer</div>
+      <p class="bio">
+        Passionate about building clean and interactive web experiences using HTML, CSS, and JavaScript.
+      </p>
+      <a href="#" class="btn">View Profile</a>
+    </div>
+  </div>
+
+</body>
+</html>
+<!--I have created a complete profile card webpage using HTML and CSS. This webpage demonstrates the use of different CSS concepts such as selectors, fonts, colors, backgrounds, box model, display properties, positioning, pseudo-classes, and transitions. The design includes a profile card with a header, profile image, content section, and a button. Various hover and click effects are applied to make the card interactive and visually appealing.
+
+----Concepts Used:----
+
+=> CSS Selectors: Element (body), Class (.header, .btn, .profile-pic), and ID (#card-container)
+=> Fonts: Google Font (Poppins)
+=> Colors & Backgrounds: Solid colors and gradient backgrounds
+=> Box Model: Margin, padding, border, border-radius, and box-shadow
+=> Display Types: Flex and inline-block
+=> Positioning: Relative positioning for the card and absolute positioning for the profile image
+=> Pseudo-classes: :hover, :active, and :focus
+=> Tansitions & Transform: Smooth hover effects using scale and translately
+
+This file can be opened in any browser and can be directly submitted as a CSS practical or college assignment. --> 

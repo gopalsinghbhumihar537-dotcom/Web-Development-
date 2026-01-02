@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Student Analytics | Practical Lab</title>
+    <style>
+        /* CSS Variables for a modern color palette */
+        :root {
+            --primary: #6366f1; /* Indigo */
+            --primary-dark: #4f46e5;
+            --success: #10b981; /* Emerald */
+            --danger: #ef4444;  /* Rose */
+            --warning: #f59e0b; /* Amber */
+            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --card-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 900px;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 25px;
+        }
+
+        /* Card Styling */
+        .glass-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        h2, h3 { color: #1e293b; margin-top: 0; }
+
+        /* Input Styles */
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Table Design */
+        .table-container { grid-column: 1 / -1; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th { background: #f8fafc; color: #64748b; font-weight: 600; padding: 15px; text-align: left; }
+        td { padding: 15px; border-top: 1px solid #f1f5f9; }
+
+        /* Badges */
+        .badge {
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .pass-badge { background: #d1fae5; color: var(--success); }
+        .fail-badge { background: #fee2e2; color: var(--danger); }
+
+        /* Scope Debugger Console */
+        .console {
+            background: #1e293b;
+            color: #38bdf8;
+            padding: 15px;
+            border-radius: 12px;
+            font-family: 'Fira Code', monospace;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="color: #1e293b; margin-bottom: 30px;">CSE Performance Portal</h1>
+
+    <div class="main-container">
+        <div class="glass-card">
+            <h3>Add New Student</h3>
+            <input type="text" id="stuName" placeholder="Full Name">
+            <input type="number" id="stuMarks" placeholder="Marks (0-100)">
+            <button onclick="processStudentData()">Analyze & Record</button>
+        </div>
+
+        <div class="glass-card">
+            <h3>Live Scope Debugger</h3>
+            <div id="debugLog" class="console">
+                // System ready...<br>
+                // Waiting for function invocation.
+            </div>
+        </div>
+
+        <div class="glass-card table-container">
+            <h3>Performance Database</h3>
+            <table id="recordsTable">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Marks</th>
+                        <th>Grade</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // GLOBAL CONST: Fixed passing threshold
+        const PASS_LIMIT = 40;
+
+        // USER-DEFINED FUNCTION
+        function processStudentData() {
+            // Block Scoped Constants for UI
+            const nameEl = document.getElementById('stuName');
+            const markEl = document.getElementById('stuMarks');
+            const tableBody = document.querySelector('#recordsTable tbody');
+            const logBox = document.getElementById('debugLog');
+
+            // Capture Values
+            let studentName = nameEl.value;
+            let studentMarks = parseInt(markEl.value);
+
+            // Simple Validation
+            if (studentName === "" || isNaN(studentMarks)) {
+                alert("Error: Invalid Input");
+                return;
+            }
+
+            /* SCOPE DEMO: var vs let
+            */
+            if (studentMarks >= PASS_LIMIT) {
+                var finalStatus = "PASSED"; // Function scoped (leaks out of if)
+                var statusColor = "pass-badge";
+            } else {
+                var finalStatus = "FAILED"; // Function scoped (leaks out of if)
+                var statusColor = "fail-badge";
+            }
+
+            // Grade logic using block-scoped let
+            let gradeChar; 
+            if (studentMarks >= 90) gradeChar = "A+";
+            else if (studentMarks >= 75) gradeChar = "A";
+            else if (studentMarks >= 50) gradeChar = "B";
+            else gradeChar = "F";
+
+            // Update UI Table using Template Literals
+            const rowHtml = `
+                <tr>
+                    <td><strong>${studentName}</strong></td>
+                    <td>${studentMarks}%</td>
+                    <td style="color: var(--primary); font-weight:bold;">${gradeChar}</td>
+                    <td><span class="badge ${statusColor}">${finalStatus}</span></td>
+                </tr>
+            `;
+            tableBody.innerHTML += rowHtml;
+
+            // Output Scope Logic to Console Box
+            logBox.innerHTML = `
+                <span style="color: #94a3b8">// Execution Context Success</span><br>
+                > var status: <span style="color: #fbbf24">'${finalStatus}'</span> (Found outside IF block!)<br>
+                > let grade: <span style="color: #fbbf24">'${gradeChar}'</span> (Scoped to function block)<br>
+                > const limit: <span style="color: #fbbf24">${PASS_LIMIT}</span> (Global access)
+            `;
+
+            // Clear inputs
+            nameEl.value = "";
+            markEl.value = "";
+        }
+    </script>
+</body>
+</html>

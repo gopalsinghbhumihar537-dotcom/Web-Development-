@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Website Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #dfe9f3, #ffffff);
+      color: #333;
+    }
+
+    /* ===== Header ===== */
+    header {
+      background: linear-gradient(135deg, #ff6a00, #ee0979);
+      color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.6rem;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffeaa7;
+    }
+
+    /* ===== Main Layout (Flexbox) ===== */
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 30px auto;
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    /* ===== Sidebar ===== */
+    .sidebar {
+      width: 25%;
+      background: linear-gradient(180deg, #6a11cb, #2575fc);
+      padding: 20px;
+      border-radius: 10px;
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .sidebar h3 {
+      margin-bottom: 15px;
+      border-bottom: 2px solid rgba(255,255,255,0.4);
+      padding-bottom: 5px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+
+    /* ===== Content ===== */
+    .content {
+      width: 75%;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .content h2 {
+      color: #2575fc;
+      margin-bottom: 15px;
+    }
+
+    .content p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    /* ===== Float Layout Section ===== */
+    .float-section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .float-box {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      overflow: hidden;
+    }
+
+    .float-sidebar {
+      float: left;
+      width: 30%;
+      background: linear-gradient(180deg, #00b09b, #96c93d);
+      padding: 20px;
+      color: #fff;
+    }
+
+    .float-content {
+      float: left;
+      width: 70%;
+      padding: 20px;
+      background: #f8f9fa;
+    }
+
+    .clear {
+      clear: both;
+    }
+
+    /* ===== Mobile (<600px) ===== */
+    @media (max-width: 599px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar, .content {
+        width: 100%;
+      }
+
+      .float-sidebar, .float-content {
+        width: 100%;
+      }
+    }
+
+    /* ===== Tablet (600–900px) ===== */
+    @media (min-width: 600px) and (max-width: 900px) {
+      .sidebar {
+        width: 35%;
+      }
+      .content {
+        width: 65%;
+      }
+    }
+
+    /* ===== Desktop (>900px) ===== */
+    @media (min-width: 901px) {
+      .sidebar {
+        width: 25%;
+      }
+      .content {
+        width: 75%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>My Colorful Website</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Flexbox Layout -->
+  <div class="container">
+    <aside class="sidebar">
+      <h3>Sidebar Menu</h3>
+      <ul>
+        <li>Dashboard</li>
+        <li>Profile</li>
+        <li>Settings</li>
+        <li>Help</li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h2>Welcome to My Website</h2>
+      <p>This is a colorful and responsive website layout created using HTML and CSS.</p>
+      <p>Flexbox is used for the main layout and float + clear are demonstrated below.</p>
+    </main>
+  </div>
+
+  <!-- Float Layout -->
+  <section class="float-section">
+    <h2 style="margin-bottom:15px; color:#ee0979;">Float Layout Example</h2>
+    <div class="float-box">
+      <div class="float-sidebar">Float Sidebar</div>
+      <div class="float-content">Float Content Area</div>
+      <div class="clear"></div>
+    </div>
+  </section>
+
+</body>
+</html>
+<!--I have added proper colors and gradients to the website, which makes it look modern, attractive, and like a real-world website. The design includes a gradient header, a colorful gradient sidebar, and a gradient float sidebar, along with a soft background gradient for the body. Shadows and rounded corners are used to give a clean card-style appearance, and hover color effects are applied to the navigation links for better interactivity. The website is fully responsive and works well on mobile screens (below 600px), tablets (600–900px), and desktops (above 900px). Overall, it looks professional and is suitable for CSS practicals, internal assignments, and viva explanations.-->

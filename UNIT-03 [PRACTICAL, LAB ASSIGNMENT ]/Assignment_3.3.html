@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document Object Model (DOM)</title>
+</head>
+<body>
+
+  <!--
+  QUESTION 3:
+  What is the Document Object Model (DOM)?
+  Explain how to select elements and modify their content
+  using innerText and innerHTML.
+  =======================================================
+  -->
+
+  <!--
+  INTRODUCTION
+  ------------
+
+  The Document Object Model (DOM) is a programming interface
+  for HTML documents. It represents a web page as a tree
+  structure where each element is treated as an object.
+  JavaScript can use the DOM to access and modify HTML content
+  dynamically.
+  -->
+
+  <!--
+  SELECTING ELEMENTS USING DOM
+  ---------------------------
+
+  Common methods used to select elements are:
+  - getElementById()
+  - getElementsByClassName()
+  - getElementsByTagName()
+  - querySelector()
+  - querySelectorAll()
+  -->
+
+  <!-- Sample HTML Elements -->
+  <h1 id="mainTitle">Hello World</h1>
+  <p class="text">Paragraph One</p>
+  <p class="text">Paragraph Two</p>
+  <div id="container"></div>
+
+  <!--
+  EXAMPLES OF SELECTING ELEMENTS
+  -----------------------------
+  -->
+
+  <script>
+    // Select element by ID
+    let title = document.getElementById("mainTitle");
+
+    // Select first element by class
+    let firstParagraph = document.querySelector(".text");
+
+    // Select all elements with class name
+    let allParagraphs = document.querySelectorAll(".text");
+  </script>
+
+  <!--
+  MODIFYING CONTENT USING innerText
+  --------------------------------
+
+  innerText is used to change or read only the
+  text content of an element.
+  -->
+
+  <!-- Example using innerText -->
+  <script>
+    title.innerText = "DOM Manipulation Example";
+
+    firstParagraph.innerText = "This text is changed using innerText.";
+
+    allParagraphs[1].innerText = "Second paragraph updated using innerText.";
+  </script>
+
+  <!--
+  MODIFYING CONTENT USING innerHTML
+  --------------------------------
+
+  innerHTML is used to change or read HTML content.
+  It supports HTML tags inside an element.
+  -->
+
+  <!-- Example using innerHTML -->
+  <script>
+    let box = document.getElementById("container");
+
+    box.innerHTML = "<h2>Added using innerHTML</h2><p>This paragraph is created dynamically.</p>";
+  </script>
+
+  <!--
+  DIFFERENCE BETWEEN innerText AND innerHTML
+  -----------------------------------------
+
+  innerText:
+  - Changes only text
+  - HTML tags are treated as text
+
+  innerHTML:
+  - Changes text and HTML
+  - HTML tags are rendered properly
+  -->
+
+  <!--
+  CONCLUSION
+  ----------
+
+  The DOM allows JavaScript to interact with HTML elements.
+  By selecting elements and using innerText or innerHTML,
+  developers can dynamically update web page content.
+  -->
+
+</body>
+</html>

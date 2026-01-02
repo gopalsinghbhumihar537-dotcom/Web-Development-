@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Control Flow Statements in JavaScript</title>
+</head>
+<body>
+
+  <!--
+  QUESTION 2:
+  Describe the various Control Flow statements in JavaScript,
+  specifically highlighting the difference between for, while,
+  and do-while loops.
+  =============================================================
+  -->
+
+  <!--
+  INTRODUCTION
+  ------------
+
+  Control Flow statements in JavaScript are used to control the
+  order in which statements are executed. They allow the program
+  to make decisions, repeat tasks, and execute code conditionally.
+  -->
+
+  <!--
+  TYPES OF CONTROL FLOW STATEMENTS
+  -------------------------------
+
+  1) Conditional Statements
+     - if
+     - if-else
+     - else-if
+     - switch
+
+  2) Looping Statements
+     - for loop
+     - while loop
+     - do-while loop
+
+  3) Jump Statements
+     - break
+     - continue
+     - return
+  -->
+
+  <!--
+  LOOPING STATEMENTS
+  -----------------
+
+  Loops are used to execute a block of code repeatedly
+  as long as a given condition is true.
+  -->
+
+  <!--
+  1) for LOOP
+  -----------
+
+  - Used when the number of iterations is known
+  - Entry-controlled loop
+  -->
+
+  <!-- Example: Print numbers from 1 to 5 using for loop -->
+  <script>
+    for (let i = 1; i <= 5; i++) {
+      console.log(i);
+    }
+  </script>
+
+  <!--
+  2) while LOOP
+  -------------
+
+  - Used when number of iterations is not known
+  - Entry-controlled loop
+  -->
+
+  <!-- Example: Print numbers from 1 to 5 using while loop -->
+  <script>
+    let i = 1;
+    while (i <= 5) {
+      console.log(i);
+      i++;
+    }
+  </script>
+
+  <!--
+  3) do-while LOOP
+  ----------------
+
+  - Executes the loop body at least once
+  - Exit-controlled loop
+  -->
+
+  <!-- Example: Print numbers from 1 to 5 using do-while loop -->
+  <script>
+    let j = 1;
+    do {
+      console.log(j);
+      j++;
+    } while (j <= 5);
+  </script>
+
+  <!--
+  DIFFERENCE BETWEEN for, while, AND do-while LOOPS
+  ------------------------------------------------
+
+  for loop:
+  - Number of iterations is known
+  - Condition checked before execution
+
+  while loop:
+  - Condition-based loop
+  - Condition checked before execution
+
+  do-while loop:
+  - Executes at least once
+  - Condition checked after execution
+  -->
+
+  <!--
+  CONCLUSION
+  ----------
+
+  Control Flow statements help in controlling the execution
+  of JavaScript programs. The for, while, and do-while loops
+  are used for repetition, each suitable for different situations.
+  -->
+
+</body>
+</html>

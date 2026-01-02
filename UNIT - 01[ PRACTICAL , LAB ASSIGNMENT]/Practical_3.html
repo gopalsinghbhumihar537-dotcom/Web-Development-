@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html >
+<head>
+    
+    <title>Education Table Example</title>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <h1 style="text-align: center;">Education Details Page</h1>
+    <hr>
+</header>
+
+<!-- Introduction before the table -->
+<p>This table demonstrates how to use <b>merged cells</b>, <b>alignment</b>, and a <b>caption</b> in HTML. Merged cells are used to combine multiple columns for better readability, the table is centered using alignment attributes, and the caption describes the purpose of the table.</p>
+
+<!-- Table with merged cells, alignment, and caption -->
+<table border="1" cellspacing="0" cellpadding="10" align="center">
+    <caption><b>My Education Details</b></caption>
+    <tr>
+        <th>Courses</th>
+        <th>School/University & Location</th>
+        <th>Year</th>
+        <th>Percentage/Status</th>
+    </tr>
+    <tr>
+        <!-- Merged cell for B.Tech school and location -->
+        <td>B.Tech (CSE)</td>
+        <td colspan="2">Rungta International Skill University, Bhilai</td>
+        <td>Ongoing</td>
+    </tr>
+    <tr>
+        <td>Intermediate</td>
+        <td>SJS Public School, Raebareli, Uttar Pradesh</td>
+        <td>2023</td>
+        <td>71%</td>
+    </tr>
+    <tr>
+        <td>10th Class</td>
+        <td>Universal Public School, Gurugram</td>
+        <td>2021</td>
+        <td>66.6%</td>
+    </tr>
+</table>
+
+<!-- Explanation after the table -->
+<p>In the table above:</p>
+<ul>
+    <li>The <b>B.Tech (CSE)</b> row uses a <b>merged cell</b> (colspan="2") to combine the School/University and Location columns for clarity.</li>
+    <li>The table is <b>center-aligned</b> on the page using <code>align="center"</code>.</li>
+    <li>The <b>caption</b> at the top describes the table as "My Education Details".</li>
+</ul>
+<p>This demonstrates how HTML tables can be structured neatly while highlighting important details through merged cells, alignment, and captions.</p>
+
+<!-- Footer -->
+<footer>
+    <hr>
+    <p style="text-align: center;">&copy; 2025 My Education Details</p>
+</footer>
+
+</body>
+</html>
+
+
+
+
+

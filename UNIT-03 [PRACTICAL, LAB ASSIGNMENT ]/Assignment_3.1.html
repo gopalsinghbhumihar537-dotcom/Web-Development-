@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Difference Between var, let, and const</title>
+</head>
+<body>
+
+  <!--
+  DIFFERENCE BETWEEN var, let, AND const IN JAVASCRIPT
+  ===================================================
+
+  JavaScript provides three ways to declare variables: var, let, and const.
+  They mainly differ in terms of scope and hoisting.
+  -->
+
+  <!--
+  1) SCOPE
+  --------
+
+  var:
+  - Function scoped
+  - Not limited to blocks like if, for, or while
+  - Accessible anywhere inside the function
+
+  let:
+  - Block scoped
+  - Accessible only within the block { } where it is declared
+
+  const:
+  - Block scoped
+  - Same scope rules as let
+  -->
+
+  <!--
+  2) HOISTING
+  -----------
+
+  var:
+  - Hoisted to the top of its scope
+  - Automatically initialized with undefined
+  - Can be accessed before declaration without error
+
+  let:
+  - Hoisted but not initialized
+  - Exists in the Temporal Dead Zone (TDZ)
+  - Accessing before declaration causes ReferenceError
+
+  const:
+  - Hoisted but not initialized
+  - Also in Temporal Dead Zone (TDZ)
+  - Must be initialized at the time of declaration
+  -->
+
+  <!--
+  CODE EXAMPLES
+  =============
+  -->
+
+  <!-- Example using var -->
+  <script>
+    console.log(a); // Output: undefined
+    var a = 10;
+
+    if (true) {
+      var x = 5;
+    }
+    console.log(x); // Output: 5 (not block scoped)
+  </script>
+
+  <!-- Example using let -->
+  <script>
+    // console.log(b); // ReferenceError (TDZ)
+    let b = 20;
+
+    if (true) {
+      let y = 10;
+      console.log(y); // Output: 10
+    }
+    // console.log(y); // Error: y is block scoped
+  </script>
+
+  <!-- Example using const -->
+  <script>
+    // console.log(c); // ReferenceError (TDZ)
+    const c = 30;
+
+    if (true) {
+      const z = 15;
+      console.log(z); // Output: 15
+    }
+    // z = 20; // Error: Assignment to constant variable
+  </script>
+
+  <!--
+  CONCLUSION
+  ----------
+
+  var is function scoped and allows re-declaration and hoisting with undefined.
+  let is block scoped and safer to use due to the Temporal Dead Zone.
+  const is also block scoped and is used for values that should not be reassigned.
+
+  In modern JavaScript, let and const are preferred over var.
+  -->
+
+</body>
+</html>

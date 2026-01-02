@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewp:hover {
+      color: #ff5777;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    port" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Responsive Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f2f6ff;
+      color: #2c3e50;
+    }
+
+    header {
+      background: #7ab8ff;
+      padding: 22px;
+      text-align: center;
+      font-size: 26px;
+      font-weight: 600;
+      border-bottom: 3px solid #5aa3ff;
+      color: white;
+      letter-spacing: 1px;
+      box-shadow: 0 3px 10px #c7deff;
+    }
+
+    .layout {
+      display: flex;
+      gap: 15px;
+      padding: 15px;
+    }
+
+    .sidebar {
+      background: #fff7c2;
+      padding: 22px;
+      border-radius: 16px;
+      width: 230px;
+      border: 2px solid #ffe38a;
+      box-shadow: 0 4px 12px #f7e9a6;
+      transition: transform .3s ease;
+    }
+    .sidebar:hover {
+      transform: translateY(-4px);
+    }
+
+    #content {
+      background: #ffe1e7;
+      padding: 22px;
+      border-radius: 16px;
+      flex: 1;
+      border: 2px solid #ffb6b1;
+      min-height: 220px;
+      box-shadow: 0 4px 12px #ffd6d3;
+      transition: transform .3s ease;
+    }
+    #content:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Float demo */
+    .float-box {
+      float: left;
+      width: 120px;
+      height: 120px;
+      background: #b0ffda;
+      border-radius: 16px;
+      margin: 0 18px 18px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: #2c3e50;
+      box-shadow: 0 4px 12px #caffea;
+      transition: transform 0.3s ease, box-shadow .3s ease;
+    }
+    .float-box:hover {
+      transform: scale(1.1) rotate(3deg);
+      box-shadow: 0 6px 18px #b0ffe0;
+    }
+    .float-box:hover {
+      transform: scale(1.08) rotate(2deg);
+    }
+
+    .clearfix::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    /* ---- Responsive Layout ---- */
+
+    /* < 600px: stack all */
+    @media (max-width: 600px) {
+      .layout {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+      }
+    }
+
+    /* 600–900px: reduce sidebar width */
+    @media (min-width: 600px) and (max-width: 900px) {
+      .sidebar {
+        width: 180px;
+      }
+    }
+
+  .sidebar p:hover {
+      color: #d47d00;
+      font-weight: bold;
+      transform: translateX(4px);
+      transition: 0.3s;
+    }
+
+    ul li {
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    ul li:hover {
+      color: #ff5777;
+      transition: .3s;
+      transform: translateX(5px);
+    }
+
+  </style>
+</head>
+<body>
+
+<header>My Simple Website</header>
+
+<div class="layout">
+  <div class="sidebar">
+    <h3>Menu</h3>
+    <p>Home</p>
+    <p>Profile</p>
+    <p>Settings</p>
+  </div>
+
+  <div id="content" class="clearfix">
+    <div class="float-box">IMG</div>
+    <h2>Welcome to the Responsive Layout</h2>
+    <p>This layout demonstrates Flexbox, float + clear, and media queries. Resize your browser to watch the layout shift beautifully across breakpoints.</p>
+    <p>Below is additional sample content to fill the page and make it visually rich:</p>
+
+    <h3>About This Page</h3>
+    <p>This page showcases essential CSS techniques including:</p>
+    <ul>
+      <li>Flexbox alignment and structure</li>
+      <li>Float and clear usage for legacy layout methods</li>
+      <li>Responsive design through media queries</li>
+      <li>Hover effects, transitions, and transforms</li>
+      <li>Colorful themed UI with shadows and rounded corners</li>
+    </ul>
+
+    <h3>Additional Content Section</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi posuere, justo at elementum malesuada, metus risus euismod urna, eget facilisis libero velit eu libero. Sed sit amet massa ut leo interdum tincidunt. Integer egestas, nisi vel feugiat egestas, nunc ipsum rutrum lorem, nec hendrerit risus elit vitae nibh.</p>
+
+    <p>Proin sit amet lacus sit amet neque viverra ultricies. Nullam eget aliquam urna. Vestibulum non elit arcu. Donec vulputate erat sed magna varius convallis. Morbi pulvinar, tortor et tempor facilisis, eros lacus volutpat velit, id egestas justo massa vitae lacus.</p>
+
+    <h3>More Features</h3>
+    <p>✓ Stylish layout using soft color themes<br>
+       ✓ Smooth animations for UI interactions<br>
+       ✓ Beautiful shadows and spacing<br>
+       ✓ Clean typography and enhanced structure
+    </p>
+
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
