@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beautiful Scenery Canvas</title>
+  <style>
+    body {
+      margin: 0;
+      background: #87CEEB;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial;
+    }
+
+    canvas {
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="scenery" width="800" height="500"></canvas>
+
+<script>
+  const canvas = document.getElementById("scenery");
+  const ctx = canvas.getContext("2d");
+
+  // Sky gradient
+  const skyGradient = ctx.createLinearGradient(0,0,0,canvas.height);
+  skyGradient.addColorStop(0, "#87CEEB");
+  skyGradient.addColorStop(1, "#f0e68c");
+  ctx.fillStyle = skyGradient;
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+
+  // Sun
+  ctx.beginPath();
+  ctx.arc(650, 100, 50, 0, Math.PI*2);
+  ctx.fillStyle = "#FFD700";
+  ctx.fill();
+  ctx.closePath();
+
+  // Mountains
+  function drawMountain(x, y, width, height, color) {
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(x + width/2, y - height);
+    ctx.lineTo(x + width, y);
+    ctx.closePath();
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
+  drawMountain(50, 300, 250, 150, "#556B2F");
+  drawMountain(200, 300, 300, 200, "#6B8E23");
+  drawMountain(400, 300, 300, 180, "#2E8B57");
+
+  // Grass
+  ctx.fillStyle = "#228B22";
+  ctx.fillRect(0, 300, canvas.width, 200);
+
+  // River
+  ctx.beginPath();
+  ctx.moveTo(600, 500);
+  ctx.bezierCurveTo(550, 400, 650, 350, 500, 300);
+  ctx.lineTo(550,500);
+  ctx.fillStyle = "#1E90FF";
+  ctx.fill();
+  ctx.closePath();
+
+  // Trees
+  function drawTree(x, y) {
+    // Trunk
+    ctx.fillStyle = "#8B4513";
+    ctx.fillRect(x-5, y, 10, 40);
+    // Leaves
+    ctx.beginPath();
+    ctx.moveTo(x-20, y);
+    ctx.lineTo(x, y-40);
+    ctx.lineTo(x+20, y);
+    ctx.closePath();
+    ctx.fillStyle = "#006400";
+    ctx.fill();
+  }
+  drawTree(150, 300);
+  drawTree(250, 320);
+  drawTree(400, 310);
+  drawTree(550, 330);
+
+  // Small clouds
+  function drawCloud(x, y){
+    ctx.beginPath();
+    ctx.arc(x, y, 20, 0, Math.PI*2);
+    ctx.arc(x+25, y, 25, 0, Math.PI*2);
+    ctx.arc(x+55, y, 20, 0, Math.PI*2);
+    ctx.fillStyle = "white";
+    ctx.fill();
+  }
+  drawCloud(100, 80);
+  drawCloud(300, 60);
+  drawCloud(500, 100);
+
+</script>
+
+</body>
+</html>

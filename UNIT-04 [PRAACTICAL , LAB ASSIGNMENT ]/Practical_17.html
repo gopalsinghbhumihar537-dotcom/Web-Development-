@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Advanced Event Listener Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: white;
+      width: 360px;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      color: #673ab7;
+      margin-bottom: 15px;
+      transition: color 0.4s;
+    }
+
+    .hover-box {
+      width: 220px;
+      height: 110px;
+      margin: 15px auto;
+      line-height: 110px;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      border-radius: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+
+    .hover-active {
+      background: linear-gradient(to right, #a18cd1, #fbc2eb);
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    input {
+      width: 95%;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: box-shadow 0.3s;
+    }
+
+    input:focus {
+      box-shadow: 0 0 10px #673ab7;
+    }
+
+    #output {
+      margin-top: 12px;
+      font-size: 16px;
+      color: #009688;
+      font-weight: bold;
+      min-height: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2 id="heading">Event Listener Magic ✨</h2>
+
+  <div id="box" class="hover-box">Hover Me</div>
+
+  <input type="text" id="inputBox" placeholder="Type using keyboard">
+
+  <div id="output"></div>
+</div>
+
+<script>
+  const box = document.getElementById("box");
+  const input = document.getElementById("inputBox");
+  const output = document.getElementById("output");
+  const heading = document.getElementById("heading");
+
+  // Mouse enter
+  box.addEventListener("mouseenter", function () {
+    box.classList.add("hover-active");
+    box.innerHTML = "Mouse Inside!";
+    heading.style.color = "#e91e63";
+  });
+
+  // Mouse leave
+  box.addEventListener("mouseleave", function () {
+    box.classList.remove("hover-active");
+    box.innerHTML = "Hover Me";
+    heading.style.color = "#673ab7";
+  });
+
+  // Keyboard event
+  input.addEventListener("keyup", function () {
+    output.innerHTML = "You typed: " + input.value;
+  });
+</script>
+
+</body>
+</html>

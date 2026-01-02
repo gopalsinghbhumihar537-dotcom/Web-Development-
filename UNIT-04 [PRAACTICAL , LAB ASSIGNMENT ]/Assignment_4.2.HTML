@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promises and Async/Await in JavaScript</title>
+</head>
+<body>
+
+  <!--
+  QUESTION 2:
+  What are Promises in JavaScript, and how do async/await
+  simplify working with asynchronous code?
+  =======================================================
+  -->
+
+  <!--
+  INTRODUCTION
+  ------------
+
+  JavaScript is an asynchronous language, which means
+  some operations (like API calls, file loading, timers)
+  take time to complete.
+
+  Promises and async/await are used to handle asynchronous
+  operations in a clean and readable way.
+  -->
+
+  <!--
+  WHAT IS A PROMISE?
+  -----------------
+
+  A Promise is an object that represents the eventual
+  completion or failure of an asynchronous operation.
+
+  A Promise has three states:
+  1) Pending   → Initial state
+  2) Fulfilled → Operation completed successfully
+  3) Rejected  → Operation failed
+  -->
+
+  <!--
+  PROMISE EXAMPLE
+  ---------------
+
+  This example shows a Promise that resolves successfully
+  after 2 seconds.
+  -->
+
+  <script>
+    let myPromise = new Promise(function(resolve, reject) {
+      let success = true;
+
+      setTimeout(() => {
+        if (success) {
+          resolve("Promise resolved successfully!");
+        } else {
+          reject("Promise rejected!");
+        }
+      }, 2000);
+    });
+
+    myPromise
+      .then(result => {
+        console.log(result);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  </script>
+
+  <!--
+  ASYNC / AWAIT
+  -------------
+
+  async and await are modern JavaScript keywords that
+  make working with Promises easier and more readable.
+
+  - async makes a function return a Promise
+  - await pauses the execution until the Promise resolves
+  -->
+
+  <!--
+  ASYNC / AWAIT EXAMPLE
+  --------------------
+
+  The same Promise is handled using async/await.
+  -->
+
+  <script>
+    async function handlePromise() {
+      try {
+        let result = await myPromise;
+        console.log(result);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    handlePromise();
+  </script>
+
+  <!--
+  DIFFERENCE BETWEEN PROMISES AND ASYNC/AWAIT
+  ------------------------------------------
+
+  Promises:
+  - Use .then() and .catch()
+  - Can become difficult to read for multiple operations
+
+  async/await:
+  - Looks like synchronous code
+  - Easier to read and understand
+  -->
+
+  <!--
+  CONCLUSION
+  ----------
+
+  Promises help handle asynchronous operations in JavaScript.
+  async/await simplify Promise handling by making the code
+  cleaner, more readable, and easier to maintain.
+  -->
+
+</body>
+</html>

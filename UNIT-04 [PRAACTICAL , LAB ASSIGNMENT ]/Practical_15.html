@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Manipulation Demo</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      background: white;
+      padding: 20px;
+      width: 350px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .text {
+      color: blue;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2 id="heading">DOM Manipulation</h2>
+
+  <p class="text">This is original paragraph text.</p>
+
+  <div id="output">Output will appear here.</div>
+
+  <button onclick="changeById()">Use getElementById()</button>
+  <button onclick="changeByQuery()">Use querySelector()</button>
+</div>
+
+<script>
+  // Using getElementById()
+  function changeById() {
+    document.getElementById("output").innerHTML =
+      "Text changed using <b>getElementById()</b>";
+  }
+
+  // Using querySelector()
+  function changeByQuery() {
+    document.querySelector(".text").innerHTML =
+      "Paragraph changed using <b>querySelector()</b>";
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Click to Modify DOM</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: white;
+      width: 400px;
+      padding: 25px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      color: #764ba2;
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin: 6px;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(to right, #ff512f, #dd2476);
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    }
+
+    ul {
+      margin-top: 15px;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      background: linear-gradient(to right, #43cea2, #185a9d);
+      color: white;
+      margin: 8px 0;
+      padding: 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      animation: slideIn 0.4s ease;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    li:hover {
+      transform: scale(1.05);
+    }
+
+    .modified {
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      color: #333;
+      font-weight: bold;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>Click to Modify ✨</h2>
+
+  <button onclick="addItem()">➕ Add Item</button>
+  <button onclick="removeItem()">➖ Remove Last</button>
+
+  <ul id="list">
+    <li onclick="modifyItem(this)">Click me to modify</li>
+  </ul>
+</div>
+
+<script>
+  let count = 1;
+  const list = document.getElementById("list");
+
+  // CREATE + APPEND
+  function addItem() {
+    const li = document.createElement("li");
+    li.innerHTML = "Dynamic Item " + count++;
+    li.onclick = function () {
+      modifyItem(this);
+    };
+    list.appendChild(li);
+  }
+
+  // REMOVE CHILD
+  function removeItem() {
+    if (list.children.length > 0) {
+      list.removeChild(list.lastElementChild);
+    }
+  }
+
+  // MODIFY ON CLICK
+  function modifyItem(element) {
+    element.innerHTML = "✔ Modified on Click!";
+    element.classList.toggle("modified");
+  }
+</script>
+
+</body>
+</html>

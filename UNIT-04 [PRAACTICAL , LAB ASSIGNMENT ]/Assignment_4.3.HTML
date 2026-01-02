@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Delegation in JavaScript</title>
+</head>
+<body>
+
+  <!--
+  QUESTION 3:
+  Describe the concept of Event Delegation and explain
+  the use of addEventListener.
+  =======================================================
+  -->
+
+  <!--
+  INTRODUCTION
+  ------------
+
+  In JavaScript, events (like clicks, key presses) allow
+  interaction with HTML elements. Event delegation is a
+  technique where a single event listener is added to a
+  parent element to manage events for its child elements.
+  -->
+
+  <!--
+  ADDING EVENT LISTENERS
+  ---------------------
+
+  The addEventListener() method attaches an event handler
+  to an element. Syntax:
+
+  element.addEventListener(event, function, useCapture);
+  - event        → Type of event (click, keyup, etc.)
+  - function     → Callback function executed when event occurs
+  - useCapture   → Optional (true for capturing phase)
+  -->
+
+  <!--
+  EVENT DELEGATION EXAMPLE
+  ------------------------
+
+  Instead of adding a click listener to each list item,
+  we add one listener to the parent <ul> element and
+  detect which child was clicked.
+  -->
+
+  <ul id="myList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <script>
+    // Select the parent element
+    const list = document.getElementById("myList");
+
+    // Add a single click listener to parent
+    list.addEventListener("click", function(event) {
+      // Check if a <li> was clicked
+      if (event.target && event.target.nodeName === "LI") {
+        alert("You clicked: " + event.target.innerText);
+      }
+    });
+  </script>
+
+  <!--
+  ADVANTAGES OF EVENT DELEGATION
+  ------------------------------
+
+  - Reduces memory usage (fewer listeners)
+  - Handles dynamically added elements
+  - Makes code cleaner and easier to maintain
+  -->
+
+  <!--
+  CONCLUSION
+  ----------
+
+  Event delegation allows a parent element to manage
+  events for its children efficiently. addEventListener
+  is the standard method to attach event handlers in JavaScript.
+  -->
+
+</body>
+</html>
