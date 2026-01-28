@@ -48,7 +48,7 @@ This project is ideal for students who are starting their journey in web develop
 
 ## 🖼️ Output Screenshot  
 
-![Calculator Output](Project.output.png)
+![Calculator Output](Output.png)
 
 ## 💻 Technologies Used  
 - HTML  
@@ -58,4 +58,4 @@ This project is ideal for students who are starting their journey in web develop
 ## ▶️ How to Run the Project  
 1. Clone the repository  
    ```bash
-   git clone https://github.com/your-username/calculator-project.git
+   git clone https://github.com/gopal kumar/calculator-project.git
