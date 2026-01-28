@@ -48,7 +48,7 @@ This project is ideal for students who are starting their journey in web develop
 
 ## 🖼️ Output Screenshot  
 
-![Calculator Output](Output)
+![Calculator Output](Output.png)
 
 ## 💻 Technologies Used  
 - HTML  
